@@ -57,7 +57,7 @@ io.on('connection', function(socket) {
     // App specific methods:
     socket.on(glbs.INITIALIZE, function() {
         // getSegregationIndex(socket.id,0);
-        getROP(socket.id);        
+        getROP(socket.id);
         // getData(socket.id, 'red_primaria', 'polyline', '"gid" IN (176,784,794,793,798,796,822,819,856,852,849,885,894,891,937,932,938,984,990,986,1029,1028,1076,1077,1113,1114,1117,1165,1164,1218,1221,1220,1280,1281,1284,1332,1330,1373,1368,1374,1418,1416,1455,1453,1487,1533,1527,51,48,52,64,63,76,94,91,90,96,102,101,106,110,109,114,113,118,117,122)');
         getData(socket.id, 'red_primaria', 'polyline');
         getAdditionalData(socket.id, 'bienestar', 'point');
@@ -132,7 +132,7 @@ function getData(socketId, table, type, specifics) {
         parameters = {
             geometry: 'geom',
             tableName: table,
-            properties: 'all',            
+            properties: 'all',
             where: specifics,
             debug: '',
         };
@@ -315,7 +315,7 @@ function getSpecific(socketId, specificTime) {
 //     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
 //         client = Promise.promisifyAll(client, {
 //             suffix: "AS"
-//         });        
+//         });
 //         return client.queryAS(query);
 //     });
 // }
@@ -341,7 +341,7 @@ function getSpecific(socketId, specificTime) {
 //     // App specific methods:
 //     socket.on(glbs.INITIALIZE, function() {
 //         getSegregationIndex(socket.id,0);
-//         getROP(socket.id);        
+//         getROP(socket.id);
 //         // getData(socket.id, 'red_primaria', 'polyline', '"gid" IN (176,784,794,793,798,796,822,819,856,852,849,885,894,891,937,932,938,984,990,986,1029,1028,1076,1077,1113,1114,1117,1165,1164,1218,1221,1220,1280,1281,1284,1332,1330,1373,1368,1374,1418,1416,1455,1453,1487,1533,1527,51,48,52,64,63,76,94,91,90,96,102,101,106,110,109,114,113,118,117,122)');
 //         getData(socket.id, 'red_primaria', 'polyline');
 //         getData(socket.id, 'bienestar', 'point');
@@ -382,7 +382,7 @@ function getSpecific(socketId, specificTime) {
 
 // function getData(socketId, table, type, specifics) {
 //     var query;
-//     if(specifics) 
+//     if(specifics)
 //         query = 'SELECT *, ST_AsText(geom) AS wkt FROM ' + table + ' WHERE ' + specifics;
 //     else
 //         query = 'SELECT *, ST_AsText(geom) AS wkt FROM ' + table;
@@ -406,7 +406,7 @@ function getSpecific(socketId, specificTime) {
 //         msg.table = table;
 //         clients[socketId].emit(glbs.SHOW_DATA, msg);
 //     })
-//     .catch(function (err){ console.log(err);}); 
+//     .catch(function (err){ console.log(err);});
 // }
 
 // function getState(socketId, step) {
@@ -433,10 +433,10 @@ function getSpecific(socketId, specificTime) {
 //         //     if (err) {
 //         //         return console.log(err);
 //         //     }
-//         // });        
+//         // });
 //         clients[socketId].emit(glbs.DRAW_MAP, msg);
 //     })
-//     .catch(function (err){ console.log(err);});     
+//     .catch(function (err){ console.log(err);});
 // }
 
 // function getROP(socketId) {
@@ -444,7 +444,7 @@ function getSpecific(socketId, specificTime) {
 //     makeQuery(query).then(function (result){
 //         clients[socketId].emit(glbs.I1_CHART, result); // Sending to the client the new event...
 //     })
-//     .catch(function (err){ console.log(err);});      
+//     .catch(function (err){ console.log(err);});
 // }
 
 // function getSegregationIndex(socketId, time) {
@@ -478,5 +478,5 @@ function getSpecific(socketId, specificTime) {
 //         msg.table = 'upz';
 //         clients[socketId].emit(glbs.SHOW_DATA, msg); // Sending to the client the new event...
 //     })
-//     .catch(function (err){ console.log(err);}); 
+//     .catch(function (err){ console.log(err);});
 // }
